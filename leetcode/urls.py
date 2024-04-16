@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from breaddit import views
 
 
 urlpatterns = [
+    path("posts/<str:post_id>/comments/", views.comments, name="post_comment_list"),
     path("admin/", admin.site.urls),
 ]
